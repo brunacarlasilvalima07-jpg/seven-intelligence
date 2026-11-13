@@ -81,7 +81,7 @@ def fetch_feed(name, url):
 def add_rows(rows):
     if not rows:
         return 0
-    old = st.session_state.items
+    old = st.session_state["items"]
     incoming = pd.DataFrame(rows).reindex(columns=FIELDS, fill_value="").fillna("")
     combined = pd.concat([old, incoming], ignore_index=True)
     combined = combined.drop_duplicates(subset=["id"], keep="first")
