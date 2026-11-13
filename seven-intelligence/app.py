@@ -112,7 +112,7 @@ with st.sidebar:
     st.info("Notícias coletadas NÃO são automaticamente promoções válidas. Verifique o regulamento oficial antes de confirmar.")
     st.caption("Armazenamento temporário nesta versão. Exporte backups regularmente.")
 
-df = st.session_state.items
+df = st.session_state["items"]
 if page == "Painel":
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Notícias", len(df))
